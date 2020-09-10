@@ -1,5 +1,7 @@
 @import "layout";
 @import "headernavbar";
+@import "auth/signin";
+@import "auth/signup";
 
 html {
   font-size: 62.5%; // 1rem is 10px
