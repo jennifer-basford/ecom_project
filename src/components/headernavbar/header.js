@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
+import history from "../../history";
 
 class Header extends Component {
   render() {
@@ -13,7 +14,7 @@ class Header extends Component {
               <a
                 className="header__link"
                 key={index}
-                onClick={() => console.log("trying to switch name")}
+                onClick={() => history.push(link.path)}
               >
                 {link.title}
               </a>
