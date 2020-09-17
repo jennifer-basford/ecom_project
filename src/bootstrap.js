@@ -4,15 +4,9 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Router, Switch, Route } from "react-router-dom";
 
-import reducers from "./reducers";
+import reducer from "./reducers";
 
-const createStoreWithMiddleware = applyMiddleware()(
-  compose(
-    (window.devToolsExtension ? window.devToolsExtension() : (f) => f)(
-      createStore
-    )
-  )
-);
+const store = createStore(reducer, compose(applyMiddleware(), window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f));
 
 import "./style/main.scss";
 
@@ -25,7 +19,7 @@ import Account from "./components/account/account";
 
 function main() {
   ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store={store}>
       <Router history={history}>
         <Layout>
           <Switch>
