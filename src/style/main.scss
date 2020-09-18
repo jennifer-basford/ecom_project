@@ -17,12 +17,18 @@ body {
 
 @import "layout";
 @import "headernavbar";
-@import "auth/signin";
-@import "auth/signup";
-
 @import "page-title";
 @import "form-fields";
 @import "details";
+
+//Auth
+@import "auth/signin";
+@import "auth/signup";
+
+//Account
 @import "account/account";
 @import "account/account-information";
 @import "account/purchase-history";
+
+//Shop
+@import "shop/shop";
