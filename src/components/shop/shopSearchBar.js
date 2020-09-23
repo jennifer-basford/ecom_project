@@ -4,15 +4,17 @@ import { reduxForm, Field } from "redux-form";
 
 function FormSearchBar(props) {
   return (
-    <input
-      className={`${props.className} form-search-bar`}
-      {...props.input}
-      type="text"
-      placeholder={`${props.placeholder}`}
-    />
+    <div className="search-bar-grid">
+      <i className="fas fa-search search-bar-grid__icon"></i>
+      <input
+        className={`${props.className} form-search-bar search-bar-grid__input`}
+        {...props.input}
+        type="text"
+        placeholder={`${props.placeholder}`}
+      />
+    </div>
   );
 }
-//<i class="fas fa-search"></i>
 
 class ShopSearchBar extends Component {
   render() {
@@ -22,7 +24,7 @@ class ShopSearchBar extends Component {
         <Field
           name="query"
           className="shop-search-bar__form-search-bar"
-          placeholder="search"
+          placeholder="Search"
           component={FormSearchBar}
         />
       </form>
