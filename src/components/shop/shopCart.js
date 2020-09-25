@@ -7,6 +7,8 @@ import * as actions from "../../actions";
 
 import CartButton from "./cartButton";
 
+import history from "../../history";
+
 function CartContent({ className, products }) {
   let count = products.length;
   let productsJSX = products.map((product) => (
@@ -25,7 +27,12 @@ function CartFooter({ className, products }) {
   const price = 7.96;
   return (
     <div className={`${className} cart-footer`}>
-      <a className="cart-footer__checkout">Checkout</a>
+      <a
+        onClick={() => history.push("/order/review")}
+        className="cart-footer__checkout"
+      >
+        Checkout
+      </a>
       <div className="cart-footer__subtotal">Subtotal</div>
       <div className="cart-footer__price">${price}</div>
     </div>
