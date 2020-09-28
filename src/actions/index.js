@@ -9,6 +9,7 @@ import {
   setPurchaseDetail,
   fetchCartProducts,
   addCartProduct,
+  signIn,
 } from "./user";
 
 import {
@@ -30,4 +31,5 @@ export {
   filterProductsWithQuery,
   fetchCartProducts,
   addCartProduct,
+  signIn,
 };
